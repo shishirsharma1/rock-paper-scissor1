@@ -3,13 +3,14 @@ let playerScore = 0;
 let computerscore = 0;
 
 
-
+/* FUNCTION TO GET PLAYER CHOICE*/
 function getPlayerChoice(){
     let playerChoice = prompt("What is your choice");
     playerChoice = playerChoice.toUpperCase();
     return playerChoice;
 }
 
+/*FUNCTION TO GET COMPUTER CHOICE*/
 function getComputerChoice(){
     let randomNumber = Math.floor(Math.random()*2);
     switch (randomNumber) {
@@ -23,7 +24,7 @@ function getComputerChoice(){
 
 }
 
-
+/*PLAYS THE ROUNDS AND ADD THE SCORE*/
 function playRound(computerSelection, playerSelection){
 
     if(playerSelection === 'ROCK' && computerSelection ==='PAPER' ||
@@ -42,11 +43,12 @@ function playRound(computerSelection, playerSelection){
     
 }
 
+/*FUNCTION THAT PLAYS THE GAME FOR 5 ROUNDS*/
 function game(){
     for(let i = 1; i<=5; i++){
         let  playerSelection = getPlayerChoice();
         let computerSelection = getComputerChoice();
-        
+
         playRound(computerSelection, playerSelection);
     }
 
@@ -61,4 +63,5 @@ function game(){
     }
 }
 
+/*RUNS THE GAME */
 game();
